@@ -1,0 +1,9 @@
+
+  <div class="dash-topnav" #myTopnav>
+      <a routerLink="./" routerLinkActive="dash-active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a *ngFor='let compTree of componentTrees' routerLinkActive="dash-active" routerLink='{{compTree?.component.route}}' >{{compTree?.component.name}}</a>
+
+      <a href="javascript:void(0);" style="font-size:15px;" class="dash-icon" (click)="toggleNav()">&#9776;</a>
+    </div>
+<router-outlet></router-outlet>
+This is student dashboard!!

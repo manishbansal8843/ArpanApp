@@ -1,20 +1,30 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div id="mySidenav" class="sidenav" #mySidenav>
+		<a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a> 
+		<a routerLink='home' routerLinkActive="active" (click)="closeNav()">Home</a>
 
+		<a *ngFor='let compTree of componentTrees' routerLinkActive="active" routerLink='{{compTree?.component.route}}' (click)="closeNav()">{{compTree?.component.name}}</a>
+	  </div>
+<div id='app-main' #appMain >
+
+
+	<div class="app-header">
+			<a href="javascript:;" (click)="openNav()"><span style="font-size:30px;cursor:pointer" >&#9776;</span></a>
+			<a href="javascript:;" class="app-logo">Arpan - {{initiative?.name}}</a>
+		  
+			<div class="app-header-right">
+					<a *ngIf='!isLoggedIn' href="#" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+					<p *ngIf='isLoggedIn' ><span class="glyphicon glyphicon-user"></span> &nbsp;{{first_name}}</p>
+					<a href="javascript:;" *ngIf='isLoggedIn' (click)='signOut()'><span class="glyphicon glyphicon-log-out"></span> LogOut</a>
+
+			</div>
+		  </div>
+<div style="width:100%;height:100%">
+<router-outlet (click)="closeNav()"></router-outlet>
+</div>
+<div class="footer">
+		<div class="footertxtcolor">
+			<div class="footertxtpos">Copyright
+				&copy; Arpan the Joy of Giving.</div>
+		</div>
+    </div>
+    </div>

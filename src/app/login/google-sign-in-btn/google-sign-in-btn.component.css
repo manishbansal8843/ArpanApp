@@ -1,0 +1,15 @@
+
+  #customBtn2:hover {
+    cursor: pointer;
+  }
+  
+  .g-btn-wrapper{
+    margin-left:0;
+    width: 60%;
+  }
+
+  @media screen and (min-width: 480px) {
+    .g-btn-wrapper{
+      margin:auto;
+    }
+}

@@ -1,0 +1,15 @@
+
+  #customBtn2:hover {
+    cursor: pointer;
+  }
+  
+  .fb-btn-wrapper{
+    margin-left:0;
+    max-width: 60%;
+  }
+
+  @media screen and (min-width: 480px) {
+    .fb-btn-wrapper{
+      margin:auto;
+    }
+}
